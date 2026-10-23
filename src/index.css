@@ -1,0 +1,73 @@
+:root {
+  --navy: #12213a;
+  --panel: #172a42;
+  --panel2: #1b304a;
+  --paper: #ede6d6;
+  --muted: #a6afbb;
+  --faint: #6e7b8a;
+  --gold: #d4a45c;
+  --teal: #74a99d;
+  --line: rgba(237, 230, 214, 0.13);
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+  --serif: 'Fraunces', Georgia, serif;
+  --gutter: clamp(24px, 6vw, 88px);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--navy);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
+.mono { font-family: var(--mono); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+/* Cursor guides: crosshair on desktop, sweeping scan lines on touch */
+.cursor-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.cursor-layer.on { opacity: 1; }
+
+.cl-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(212, 164, 92, 0.3);
+  will-change: transform;
+}
+.cl-v { width: 1px; height: 100%; }
+.cl-h { height: 1px; width: 100%; }
+
+/* Click spark */
+.spark {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border: 1px solid #d4a45c;
+  animation: spark 0.5s ease-out forwards;
+}
+@keyframes spark {
+  0% { opacity: 1; transform: scale(0.3); background: rgba(212, 164, 92, 0.55); }
+  100% { opacity: 0; transform: scale(1.6); background: rgba(212, 164, 92, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
