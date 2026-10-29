@@ -273,3 +273,28 @@ footer {
   .about-copy { font-size: 14px; }
   .section-title small { display: block; margin: 5px 0 0; }
 }
+/* Simple inner pages */
+.stub {
+  min-height: 100vh;
+  padding: clamp(72px, 12vw, 148px) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+}
+.stub h1 {
+  font: 600 clamp(40px, 7vw, 88px) / 1 var(--sans);
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.stub p { font: 400 18px / 1.6 var(--serif); color: var(--muted); margin: 0; }
+/* Page transition overlay */
+.transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  visibility: hidden;
+  background: #101b2b;
+}
